@@ -4,11 +4,14 @@
  */
 package emsimclient;
 
+import java.io.File;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import org.fuin.utils4j.Utils4J;
+
 
 /**
  *
@@ -28,6 +31,7 @@ public class EmsimClient extends Application {
     }
  
     public static void main(String[] args){
+        Utils4J.addToClasspath("file:///"+System.getProperty("java.home")+ File.separator+"lib"+File.separator+"jfxrt.jar");
         launch(args);
     }
 }

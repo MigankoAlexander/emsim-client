@@ -13,6 +13,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <mainClass>emsimclient.EmsimClient</mainClass>
     </properties>
+    <dependencies>
+        <dependency>
+            <groupId>org.fuin</groupId>
+            <artifactId>utils4j</artifactId>
+            <version>0.7.0</version>
+        </dependency>
+    </dependencies>
 
     <organization>
         <!-- Used as the 'Vendor' for JNLP generation -->
@@ -102,6 +109,27 @@
                     </additionalClasspathElements>
                 </configuration>
             </plugin>
+             <plugin>
+    <groupId>org.apache.cxf</groupId>
+    <artifactId>cxf-codegen-plugin</artifactId>
+    <executions>
+        <execution>
+        <configuration>
+            <sourceRoot>${basedir}/src/main/resources</sourceRoot>
+            <defaultOptions>
+            </defaultOptions>
+            <wsdlOptions>
+                <wsdlOption>
+                    <wsdl>${basedir}/src/main/resources/wsdl/RequestProcess.wsdl</wsdl>
+                </wsdlOption>
+            </wsdlOptions>
+        </configuration>
+        <goals>
+            <goal>wsdl2java</goal>
+        </goals>
+    </execution>
+    </executions>
+</plugin>              
         </plugins>
     </build>
 
