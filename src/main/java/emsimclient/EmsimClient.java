@@ -10,7 +10,7 @@ import static javafx.application.Application.launch;
 import javafx.scene.Scene;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
-import org.fuin.utils4j.Utils4J;
+
 
 
 /**
@@ -25,13 +25,12 @@ public class EmsimClient extends Application {
     @Override public void start(Stage stage) {
         
         stage.setTitle("    Курсовой проект по дисциплине АС. Миганько А.В., гр. 4803");
-        scene = new Scene(new MapViewer(), 750, 500, Color.web("#666970"));
+        scene = new Scene(new MapViewer(), 900, 600, Color.web("#666970"));
         stage.setScene(scene);
         stage.show();
     }
  
     public static void main(String[] args){
-        Utils4J.addToClasspath("file:///"+System.getProperty("java.home")+ File.separator+"lib"+File.separator+"jfxrt.jar");
         launch(args);
     }
 }
